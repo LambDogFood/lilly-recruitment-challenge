@@ -1,21 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="disclaimer" id="disclaimer">
-        Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real medicine(s).
+        Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real
+        medicine(s).
     </div>
     <header>
         <h1>Medicine Tracker</h1>
     </header>
     <main>
 
+        <section class="medicine-tracker">
+            <div class="medicine-forms">
+
+                 <!-- Create new medicine -->
+                <form id="create-medicine-form">
+                    <h3>Add Medicine</h3>
+
+                    <div class="form-group">
+                        <label for="create-medicine-name">Name</label>
+                        <input type="text" placeholder="Medicine Name ex: Paracetamol" id="create-medicine-name" name="create-medicine-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="create-medicine-price">Price</label>
+                        <input type="number" step="0.01" placeholder="Medicine Price ex: 9.86" id="create-medicine-price" name="create-medicine-price" required>
+                    </div>
+
+                    <p id="create-error-tag" style="display: none;" class="error-tag"></p>
+                    <button type="submit">Add Medicine</button>
+                </form>
+
+                <!-- Update new medicine -->
+                <form id="update-medicine-form">
+                    <h3>Update Existing Medicine</h3>
+
+                    <div class="form-group">
+                        <label for="update-medicine-name">Name</label>
+                        <input type="text" placeholder="Medicine Name ex: Paracetamol" id="update-medicine-name" name="update-medicine-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="update-medicine-price">Price</label>
+                        <input type="number" step="0.01" placeholder="Medicine Price ex: 9.86" id="update-medicine-price" name="update-medicine-price" required>
+                    </div>
+
+                    <p id="update-error-tag" style="display: none;" class="error-tag"></p>
+                    <button type="submit">Update Medicine</button>
+                </form>
+            </div>
+
+            <!-- Display all medicines in a table -->
+            <div class="table-container">
+                <h3>Medicines</h3>
+
+                <div class="search-container">
+                    <div class="medicine-search-bar">
+                        <input type="text" id="medicine-search-bar" class="search-bar" placeholder="Search medicine...">
+                        <button onClick="SearchMedicine()" id="medicine-search-btn" class="search-btn">Search</button>
+                    </div>
+                    <p id="medicine-error-tag" style="display: none;" class="error-tag"></p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Price</td>
+                            <td></td>
+                        <tr>
+                    </thead>
+                    <tbody id="medicine-table-body"></tbody>
+                </table>
+
+                <span class="average-price">
+                    Average Price:
+                    <p id="average-price"></p>
+                </span>
+            </div>
+        </section>
+
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>

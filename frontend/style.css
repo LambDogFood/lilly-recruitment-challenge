@@ -30,3 +30,169 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+header {
+    padding: 10px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-left: 30px;
+}
+
+.medicine-tracker {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ---- Universal Styles ---- */
+.error-tag {
+    color: rgb(163, 33, 33);
+    margin: 0;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    padding: 7px;
+    width: 100%;
+    font-weight: normal;
+    font-size: medium;
+    color: #333;
+}
+
+button {
+    padding: 8px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    font-weight: bold;
+}
+
+table, th, td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: left;
+}
+
+
+/* ---- Form Styling ---- */
+.medicine-forms {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50vh;
+}
+
+.medicine-forms h3 {
+    text-align: center;
+    margin: 2px;
+}
+
+#create-medicine-form {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}   
+
+#create-medicine-form button {
+    color: white;
+    background-color: green;
+}
+
+#create-medicine-form button:hover {
+    background-color: darkgreen;
+}
+
+#update-medicine-form {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#update-medicine-form button {
+    color: white;
+    background-color: rgb(0, 102, 255);
+}
+
+#update-medicine-form button:hover {
+    background-color: rgb(0, 47, 255);
+}
+
+.form-group {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ---- Table Styling ---- */
+.table-container {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    flex-grow: 1;
+    width: 50vh;
+}
+
+.search-container {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.medicine-search-bar {
+    display: flex;
+    gap: 4px;
+}
+
+.remove-btn {
+    height: 20px;
+    width: 20px;
+    background: rgb(184, 60, 29);
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    float: right;
+}
+
+.table-container h3 {
+    margin: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.average-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-style: italic;
+}

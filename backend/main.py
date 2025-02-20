@@ -124,7 +124,33 @@ def delete_med(name: str = Form(...)):
                 return {"message": f"Medicine deleted successfully with name: {name}"}
     return {"error": "Medicine not found"}
 
-# Add your average function here
+@app.get("/average")
+def get_average():
+    """
+    This function gets the average price of all the medicine
+    Returns:
+        dict: A dictionary containing the average price.
+    """
+    averagePrice = 0
+    count = 0
+
+    try:
+        with open('data.json') as meds:
+            current_db = json.load(meds)
+            med_db = current_db['medicines']
+            for med in med_db:
+                if isinstance(med['price'], (int, float)):
+                    averagePrice += med['price']
+                    count += 1
+        
+        # Prevent NaN
+        if (averagePrice > 0 and count > 0):
+            averagePrice /= count
+
+        return {"average_price": averagePrice}
+    
+    except:
+        return {"error": "Failed to load medicine data"}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
